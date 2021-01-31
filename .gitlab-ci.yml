@@ -1,0 +1,19 @@
+image: maven:3-jdk-11
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - mvn clean install
+  tags:
+    - shared-fi
+
+test:
+  stage: test
+  script:
+    - mvn test
+  tags:
+    - shared-fi
